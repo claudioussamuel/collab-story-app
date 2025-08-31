@@ -218,7 +218,7 @@ export function useMultipleStories(storyIds: string[]) {
     const stories: Story[] = useMemo(() => {
         if (!storiesData) return []
         
-        return storiesData.map((result, index) => {
+        return storiesData.map((result: any, index: number) => {
             if (!result.result) return null
             
             const [creator, title, totalChapters, currentChapterNumber, votingPeriod, currentChapterVotingEnd, completed] = result.result as [
@@ -315,7 +315,7 @@ export function useCompleteStoryData(storyId: string) {
     const completeStory = useMemo(() => {
         if (!story || !chaptersData) return story
         
-        const chapters: StoryChapter[] = chaptersData.map((result, index) => {
+        const chapters: StoryChapter[] = chaptersData.map((result: any, index: number) => {
             const content = result.result as string || ""
             const chapterNumber = index + 1
             
@@ -371,7 +371,7 @@ export function useBerniceEvents(callbacks: BerniceEventsCallbacks = {}) {
         address,
         abi: berniceAbi,
         eventName: "StoryCreated",
-        onLogs(logs) {
+        onLogs(logs: any[]) {
             console.log("StoryCreated events:", logs)
             onStoryCreated?.()
         },
@@ -382,7 +382,7 @@ export function useBerniceEvents(callbacks: BerniceEventsCallbacks = {}) {
         address,
         abi: berniceAbi,
         eventName: "SubmissionAdded",
-        onLogs(logs) {
+        onLogs(logs: any[]) {
             console.log("SubmissionAdded events:", logs)
             onSubmissionAdded?.()
         },
@@ -393,7 +393,7 @@ export function useBerniceEvents(callbacks: BerniceEventsCallbacks = {}) {
         address,
         abi: berniceAbi,
         eventName: "VoteCast",
-        onLogs(logs) {
+        onLogs(logs: any[]) {
             console.log("VoteCast events:", logs)
             onVoteCast?.()
         },
@@ -404,7 +404,7 @@ export function useBerniceEvents(callbacks: BerniceEventsCallbacks = {}) {
         address,
         abi: berniceAbi,
         eventName: "ChapterFinalized",
-        onLogs(logs) {
+        onLogs(logs: any[]) {
             console.log("ChapterFinalized events:", logs)
             onChapterFinalized?.()
         },
@@ -415,7 +415,7 @@ export function useBerniceEvents(callbacks: BerniceEventsCallbacks = {}) {
         address,
         abi: berniceAbi,
         eventName: "StoryCompleted",
-        onLogs(logs) {
+        onLogs(logs: any[]) {
             console.log("StoryCompleted events:", logs)
             onStoryCompleted?.()
         },

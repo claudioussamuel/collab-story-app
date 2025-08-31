@@ -4,7 +4,6 @@ import { useEffect, useMemo, useState, useCallback } from "react";
 import { Button, Icon } from "./DemoComponents";
 import { StoryBrowser, StoryCreation, StoryReader, ChapterWriter, VotingInterface } from "./StoryComponents";
 import BerniceDemo from "./BerniceDemo";
-import BerniceEnhancedIntegration from "./BerniceEnhancedIntegration";
 import { Story, StorySubmission } from "../../lib/types";
 import { useAccount, useChainId } from "wagmi"
 import { 
@@ -336,24 +335,7 @@ export default function HomeContent() {
             {activeView === "contract" && (
               <BerniceDemo />
             )}
-            {activeView === "enhanced" && (
-              <BerniceEnhancedIntegration
-                onStoryCreated={useCallback((storyId: bigint) => {
-                  console.log("Story created with ID:", storyId)
-                  refetchStories()
-                }, [refetchStories])}
-                onChapterSubmitted={useCallback((storyId: bigint) => {
-                  console.log("Chapter submitted for story:", storyId)
-                  refetchStory()
-                  refetchStories()
-                }, [refetchStory, refetchStories])}
-                onVoteCast={useCallback((storyId: bigint, submissionIndex: bigint) => {
-                  console.log("Vote cast for story:", storyId, "submission:", submissionIndex)
-                  refetchStory()
-                  refetchStories()
-                }, [refetchStory, refetchStories])}
-              />
-            )}
+
           </div>
         </main>
 

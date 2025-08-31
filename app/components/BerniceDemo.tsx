@@ -311,7 +311,7 @@ export default function BerniceDemo() {
                             {/* Submit Chapter Card */}
                             <div className="bg-white rounded-xl p-6 border border-zinc-200 shadow-sm hover:shadow-md transition-shadow">
                                 <div className="text-purple-600 mb-4">
-                                    <Icon name="edit" size="lg" />
+                                    <Icon name="plus" size="lg" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-zinc-900 mb-2">Submit Chapter</h3>
                                 <p className="text-zinc-600 text-sm mb-4">
@@ -368,7 +368,7 @@ export default function BerniceDemo() {
                             {/* Contract Info Card */}
                             <div className="bg-gradient-to-br from-zinc-50 to-zinc-100 rounded-xl p-6 border border-zinc-200">
                                 <div className="text-zinc-600 mb-4">
-                                    <Icon name="info" size="lg" />
+                                    <Icon name="plus" size="lg" />
                                 </div>
                                 <h3 className="text-lg font-semibold text-zinc-900 mb-2">Contract Info</h3>
                                 <p className="text-zinc-600 text-sm mb-4">
@@ -418,7 +418,7 @@ export default function BerniceDemo() {
                         <Button 
                             onClick={() => setMode('overview')} 
                             variant="ghost"
-                            icon={<Icon name="arrow-left" size="sm" />}
+                            icon={<Icon name="arrow-right" size="sm" />}
                         >
                             Back to Overview
                         </Button>
