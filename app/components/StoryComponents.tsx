@@ -164,9 +164,7 @@ export function StoryBrowser({ onStorySelect, onCreateStory }: StoryBrowserProps
             Pure creativity, no constraints — stories that emerge from collective imagination
           </p>
         </div>
-        <Button onClick={onCreateStory} icon={<Icon name="plus" size="sm" />} size="lg">
-          Create Story
-        </Button>
+      
       </div>
 
       {/* Filters */}
